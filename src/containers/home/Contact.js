@@ -25,7 +25,8 @@ const Contact = () => {
   };
 
   const onSubmit = e => {
-    fetch("/", {
+    console.log(...formData);
+    fetch("../../", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...formData })
@@ -51,11 +52,7 @@ const Contact = () => {
           </Row>
           <Row className="mx-auto" style={{ maxWidth: "750px" }}>
             <Col>
-              <Form
-                className="text-white"
-                onSubmit={e => onSubmit(e)}
-                netlify="true"
-              >
+              <Form className="text-white" onSubmit={e => onSubmit(e)}>
                 <FormGroup>
                   <Label for="name">NAME</Label>
                   <LargeInput

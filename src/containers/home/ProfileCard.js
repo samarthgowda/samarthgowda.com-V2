@@ -14,7 +14,8 @@ import {
   IoMdBuild,
   IoLogoGithub,
   IoLogoLinkedin,
-  IoMdMail
+  IoMdMail,
+  IoMdInformationCircleOutline
 } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
@@ -124,7 +125,6 @@ const ProfileCard = () => {
                     style={{ minWidth: "300px" }}
                   >
                     <span>Skills: {skills.join(", ")}</span>
-                    )}
                   </UncontrolledTooltip>
 
                   <UncontrolledTooltip placement="bottom" target={`github`}>
@@ -141,7 +141,15 @@ const ProfileCard = () => {
               <h5 style={{ fontWeight: "600" }} className="mb-0">
                 Samarth Gowda
               </h5>
-              <small className="mb-0">Philadelphia, PA</small>
+              <small className="mb-0" id="location">
+                <IoMdInformationCircleOutline /> Philadelphia, PA
+              </small>
+              <UncontrolledTooltip placement="bottom" target={`location`}>
+                <span>
+                  I am willing to relocate for an internship / other
+                  opportunities.
+                </span>
+              </UncontrolledTooltip>
 
               <div className="mt-4">
                 <h5 style={{ fontWeight: "600" }} className="mb-0">
