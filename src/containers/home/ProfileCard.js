@@ -19,7 +19,6 @@ import {
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import headshot from "../../assets/images/headshot.png";
-import SamarthGowdaResume from "../../assets/SamarthGowdaResume.pdf";
 import styled from "styled-components";
 
 const CardProfileImage = styled.div`
@@ -156,7 +155,7 @@ const ProfileCard = () => {
             <ButtonGradientYellow
               className="mx-2 px-4 border-0 text-dark font-code"
               tag="a"
-              href={SamarthGowdaResume}
+              href={process.env.PUBLIC_URL + "/Resume.pdf"}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -5,7 +5,6 @@ import MainNavbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import HomePage from "../home";
 import NotFoundPage from "../404";
-import Resume from "../Resume";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
         <MainNavbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          {/* <Route exact path="/resume" component={Resume} /> */}
           <Route component={NotFoundPage} />
         </Switch>
         <Footer />
