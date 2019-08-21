@@ -51,7 +51,11 @@ const Contact = () => {
           </Row>
           <Row className="mx-auto" style={{ maxWidth: "750px" }}>
             <Col>
-              <Form className="text-white" onSubmit={onSubmit} netlify="true">
+              <Form
+                className="text-white"
+                onSubmit={e => onSubmit(e)}
+                netlify="true"
+              >
                 <FormGroup>
                   <Label for="name">NAME</Label>
                   <LargeInput
