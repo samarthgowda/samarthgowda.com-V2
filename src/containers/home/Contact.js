@@ -18,9 +18,6 @@ const Contact = () => {
     changeFormData({ ...formData, [name]: value });
   };
 
-  const onSubmit = () => {
-    console.log(formData);
-  };
   const { name, email, subject, message } = formData;
 
   return (
@@ -37,7 +34,7 @@ const Contact = () => {
           </Row>
           <Row className="mx-auto" style={{ maxWidth: "750px" }}>
             <Col>
-              <Form className="text-white" onSubmit={() => onSubmit()}>
+              <Form className="text-white" action="POST" data-netlify="true">
                 <FormGroup>
                   <Label for="name">NAME</Label>
                   <LargeInput
@@ -86,6 +83,9 @@ const Contact = () => {
                     onChange={e => handleChange(e)}
                     placeholder="Enter your message"
                   />
+                </FormGroup>
+                <FormGroup>
+                  <div data-netlify-recaptcha="true"></div>
                 </FormGroup>
                 <FormGroup>
                   <ButtonGradientYellow className="text-dark my-2 px-4">

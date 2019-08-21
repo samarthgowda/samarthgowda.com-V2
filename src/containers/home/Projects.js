@@ -82,7 +82,7 @@ const Projects = () => {
                 skills="Leadership, Project Management, Fundraising, HTML / CSS"
                 description="As board member and now President of the Undergraduate Entrepreneurship Association at CMU, I wanted to increase the overall online presence of the club. This would allow us to have a place where students can find weekly updates, new and upcoming events, and ways to get more involved with the startup ecosystem at CMU. A website was a must, and thus I got on the task of rethinking, redesigning, and redeveloping our website. The goal is to make the UEA the ultimate resource for students interested in entrepreneurship at CMU and this new website gets us a little closer to doing so."
                 href="https://www.ueacmu.com"
-                github="https://www.github.com/cmuuea/ueacmu"
+                github="https://github.com/carnegieuea/ueacmu"
               />
             </Col>
             <Col md="6">
