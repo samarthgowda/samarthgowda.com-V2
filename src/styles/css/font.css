@@ -1,0 +1,15 @@
+.font-code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+.font-weight-extrabold {
+  font-weight: 800 !important;
+}
+
+.font-weight-semibold {
+  font-weight: 600 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
