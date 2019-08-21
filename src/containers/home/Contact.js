@@ -3,8 +3,7 @@ import { Form, FormGroup, Row, Col, Input, Label, Container } from "reactstrap";
 import { Display1 } from "../../styles/components/Text";
 import { LargeInput } from "../../styles/components/Form";
 import { ButtonGradientYellow } from "../../styles/components/Button";
-import { IoMdSend } from "react-icons/io";
-import axios from "axios";
+import { IoMdSend, IoMdMail } from "react-icons/io";
 
 const encode = data => {
   return Object.keys(data)
@@ -49,6 +48,13 @@ const Contact = () => {
               <Display1 className="font-weight-extrabold font-code text-white">
                 Connect with Me
               </Display1>
+              <ButtonGradientYellow
+                className="text-dark my-2 px-4"
+                tag="a"
+                href="mailto: sgowda@andrew.cmu.edu"
+              >
+                <IoMdMail /> Email
+              </ButtonGradientYellow>
             </Col>
           </Row>
           <Row className="mx-auto" style={{ maxWidth: "750px" }}>
