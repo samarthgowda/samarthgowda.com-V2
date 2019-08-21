@@ -4,6 +4,7 @@ import { Display1 } from "../../styles/components/Text";
 import { LargeInput } from "../../styles/components/Form";
 import { ButtonGradientYellow } from "../../styles/components/Button";
 import { IoMdSend } from "react-icons/io";
+import axios from "axios";
 
 const encode = data => {
   return Object.keys(data)
@@ -24,8 +25,10 @@ const Contact = () => {
     changeFormData({ ...formData, [name]: value });
   };
 
-  const onSubmit = e => {
-    console.log(...formData);
+  const onSubmit = async e => {
+    e.preventDefault();
+    console.log({ ...formData });
+
     fetch("../../", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -33,8 +36,6 @@ const Contact = () => {
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
-
-    e.preventDefault();
   };
   const { name, email, subject, message } = formData;
 
@@ -105,14 +106,12 @@ const Contact = () => {
 
                 <div data-netlify-recaptcha="true"></div>
 
-                <FormGroup>
-                  <ButtonGradientYellow
-                    className="text-dark my-2 px-4"
-                    type="submit"
-                  >
-                    <IoMdSend /> Send
-                  </ButtonGradientYellow>
-                </FormGroup>
+                <ButtonGradientYellow
+                  className="text-dark my-2 px-4"
+                  type="submit"
+                >
+                  <IoMdSend /> Send
+                </ButtonGradientYellow>
               </Form>
             </Col>
           </Row>
