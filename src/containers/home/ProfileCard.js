@@ -19,6 +19,7 @@ import {
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import headshot from "../../assets/images/headshot.png";
+import SamarthGowdaResume from "../../assets/SamarthGowdaResume.pdf";
 import styled from "styled-components";
 
 const CardProfileImage = styled.div`
@@ -154,8 +155,10 @@ const ProfileCard = () => {
           <CardFooter className="border-0 bg-white text-center">
             <ButtonGradientYellow
               className="mx-2 px-4 border-0 text-dark font-code"
-              tag={Link}
-              to="/resume"
+              tag="a"
+              href={SamarthGowdaResume}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               RESUME
             </ButtonGradientYellow>
