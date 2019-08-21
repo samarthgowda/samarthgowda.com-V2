@@ -88,7 +88,10 @@ const Contact = () => {
                   <div data-netlify-recaptcha="true"></div>
                 </FormGroup>
                 <FormGroup>
-                  <ButtonGradientYellow className="text-dark my-2 px-4">
+                  <ButtonGradientYellow
+                    type="submit"
+                    className="text-dark my-2 px-4"
+                  >
                     <IoMdSend /> Send
                   </ButtonGradientYellow>
                 </FormGroup>
