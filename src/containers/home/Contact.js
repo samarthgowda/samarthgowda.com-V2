@@ -5,6 +5,12 @@ import { LargeInput } from "../../styles/components/Form";
 import { ButtonGradientYellow } from "../../styles/components/Button";
 import { IoMdSend } from "react-icons/io";
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const Contact = () => {
   const [formData, changeFormData] = useState({
     name: "",
@@ -18,6 +24,17 @@ const Contact = () => {
     changeFormData({ ...formData, [name]: value });
   };
 
+  const onSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
   const { name, email, subject, message } = formData;
 
   return (
@@ -34,7 +51,7 @@ const Contact = () => {
           </Row>
           <Row className="mx-auto" style={{ maxWidth: "750px" }}>
             <Col>
-              <Form className="text-white" action="POST" data-netlify="true">
+              <Form className="text-white" onSubmit={onSubmit}>
                 <FormGroup>
                   <Label for="name">NAME</Label>
                   <LargeInput
@@ -84,13 +101,13 @@ const Contact = () => {
                     placeholder="Enter your message"
                   />
                 </FormGroup>
-                <FormGroup>
-                  <div data-netlify-recaptcha="true"></div>
-                </FormGroup>
+
+                <div data-netlify-recaptcha="true"></div>
+
                 <FormGroup>
                   <ButtonGradientYellow
-                    type="submit"
                     className="text-dark my-2 px-4"
+                    type="submit"
                   >
                     <IoMdSend /> Send
                   </ButtonGradientYellow>
