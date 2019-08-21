@@ -1,9 +1,26 @@
 import React, { Fragment, useState } from "react";
-import { Form, FormGroup, Row, Col, Input, Label, Container } from "reactstrap";
+import {
+  Form,
+  FormGroup,
+  Row,
+  Col,
+  Input,
+  Label,
+  Container,
+  UncontrolledTooltip
+} from "reactstrap";
 import { Display1 } from "../../styles/components/Text";
 import { LargeInput } from "../../styles/components/Form";
-import { ButtonGradientYellow } from "../../styles/components/Button";
-import { IoMdSend, IoMdMail } from "react-icons/io";
+import {
+  ButtonGradientYellow,
+  StandardButton
+} from "../../styles/components/Button";
+import {
+  IoMdSend,
+  IoMdMail,
+  IoLogoLinkedin,
+  IoLogoFacebook
+} from "react-icons/io";
 
 const encode = data => {
   return Object.keys(data)
@@ -26,8 +43,6 @@ const Contact = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    console.log({ ...formData });
-
     fetch("../../", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -45,19 +60,51 @@ const Contact = () => {
           <Row className="text-center pb-3">
             <Col>
               <p className="mb-0 text-light">CONTACT</p>
-              <Display1 className="font-weight-extrabold font-code text-white">
+              <Display1 className="font-weight-extrabold font-code text-white mb-3">
                 Connect with Me
               </Display1>
               <ButtonGradientYellow
-                className="text-dark my-2 px-4"
+                className="text-dark my-2 px-4 mx-2"
                 tag="a"
                 href="mailto: sgowda@andrew.cmu.edu"
+                id="emailtooltip"
               >
                 <IoMdMail /> Email
               </ButtonGradientYellow>
+              <StandardButton
+                className="my-2 px-4 mx-2"
+                color="dark"
+                tag="a"
+                href="https://www.linkedin.com/in/gowdasamarth"
+                rel="noopener noreferrer"
+                target="_blank"
+                id="linkedintooltip"
+              >
+                <IoLogoLinkedin /> Linkedin
+              </StandardButton>
+              <StandardButton
+                className="my-2 px-4 mx-2"
+                color="light"
+                tag="a"
+                href="https://www.facebook.com/profile.php?id=100018648992211"
+                rel="noopener noreferrer"
+                target="_blank"
+                id="facebooktooltip"
+              >
+                <IoLogoFacebook /> Facebook
+              </StandardButton>
+              <UncontrolledTooltip placement="bottom" target="emailtooltip">
+                Email is the best way to reach out to me!
+              </UncontrolledTooltip>
+              <UncontrolledTooltip placement="bottom" target="linkedintooltip">
+                Feel free to connect & message me on Linkedin!
+              </UncontrolledTooltip>
+              <UncontrolledTooltip placement="bottom" target="facebooktooltip">
+                Feel free to message me on Facebook!
+              </UncontrolledTooltip>
             </Col>
           </Row>
-          <Row className="mx-auto" style={{ maxWidth: "750px" }}>
+          {/* <Row className="mx-auto" style={{ maxWidth: "750px" }}>
             <Col>
               <Form className="text-white" onSubmit={e => onSubmit(e)}>
                 <FormGroup>
@@ -120,7 +167,7 @@ const Contact = () => {
                 </ButtonGradientYellow>
               </Form>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </div>
     </Fragment>
