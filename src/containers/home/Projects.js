@@ -89,7 +89,7 @@ const Projects = () => {
               <ProjectCard
                 title="CMU Venture Challenge"
                 skills="ReactJS, Netlify, Fundraising, Finances, Project Management"
-                description="The CMU Venture Challenge was in dire need of a website update. As director of the event, through the Undergraduate Entrepreneurship Association, I took the initiative to completely redesign and redevelop the website in ReactJS and deploy our app to Netlify. Our new website will allow us to purusue higher fundraising goals, develop competition management tools in the future, and bring the best startups to pitch their ideas and creations at the CMU Venture Challenge."
+                description="The CMU Venture Challenge was in dire need of a website update. As director of the event, through the Undergraduate Entrepreneurship Association, I took the initiative to completely redesign and redevelop the website in ReactJS and deploy our app to Netlify. Our new website will allow us to pursue higher fundraising goals, develop competition management tools in the future, and bring the best startups to pitch their ideas and creations at the CMU Venture Challenge."
                 href="https://www.cmuvc.com"
                 github="https://github.com/carnegieuea/cmuvc_2.0"
               />
