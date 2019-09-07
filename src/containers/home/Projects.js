@@ -54,6 +54,7 @@ const Projects = () => {
                 title="Pralent"
                 skills="HTML/CSS, ReactJS, NodeJS, Express, SQL, UI/UX Design"
                 description="Currently in progress of creating a web platform implementing project based learning through online challenges for students. Students can post about their projects, view other student profiles, get inspired, and learn all on our platform. Utilizing web frameworks to create a streamlined user interface for both students as well as recruiter dashboard. Implementing Machine Learning to save recruiters time finding prospective candidates."
+                href="https://www.pralent.com"
               />
             </Col>
           </Row>
