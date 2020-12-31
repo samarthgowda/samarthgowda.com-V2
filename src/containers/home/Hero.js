@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { Container, Jumbotron } from "reactstrap";
 import {
   ButtonGradientYellow,
-  StandardButton
+  StandardButton,
 } from "../../styles/components/Button";
 import { Display1 } from "../../styles/components/Text";
 
@@ -14,9 +14,7 @@ export default function Hero() {
         <Display1 className="font-weight-extrabold font-code">
           Samarth Gowda
         </Display1>
-        <h4 className="font-weight-light">
-          Student at Carnegie Mellon University
-        </h4>
+        <h4 className="font-weight-light">Stats ML @ CMU ('22)</h4>
         <h4 className="font-weight-light">Founder @ Pralent</h4>
 
         <div className="pt-md-5">
@@ -34,16 +32,14 @@ export default function Hero() {
             LATEST PROJECTS
           </ButtonGradientYellow>
           <StandardButton
-            tag={Link}
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={500}
+            tag="a"
+            href="https://pralent.com/profiles/samarthgowda"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ cursor: "pointer" }}
             className="mx-2 my-1 my-md-0 shadow px-4 py-2 bg-white text-dark"
           >
-            LEARN MORE
+            MY PRALENT PROFILE
           </StandardButton>
         </div>
       </Container>
